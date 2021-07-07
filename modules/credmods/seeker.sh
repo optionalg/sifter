@@ -20,14 +20,13 @@ echo -e "${W}Please enter the output name of KML file${NC}"
 read NAME
 echo -e "${W}===========================================================================${NC}"
 echo -e "${LP}Starting Seeker Server${NC}"
-xterm -e ngrok http 8080
-sudo python3 seeker.py --tunnel manual -k ${NAME}
+xterm -e ngrok http 8080 &
+xterm -e sudo python3 seeker.py --tunnel manual -k ${NAME} &
 echo -e "${LP}Starting Ngrok Server${NC}"
 echo -e "${W}===========================================================================${NC}"
 echo -e "${RED}NOTE: ${ORNG}Send the ngrok link with /nearyou/ prepended at the end to target${NC}"
 echo -e "${YLW}eg. ifwfhw9w8f.ngrok.io/nearyou/${NC}"
 echo -e "${W}===========================================================================${NC}"
 sleep 10
-cd /opt/sifter
-sifter -m
 
+##########################______________ VGhlIERlYWQgQnVubnkgQ2x1Yg== ______________##########################
